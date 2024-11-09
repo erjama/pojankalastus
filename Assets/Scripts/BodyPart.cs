@@ -10,6 +10,7 @@ public class BodyPart : MonoBehaviour
 
         if (other.gameObject.name == "harava") {
 
+            Debug.Log("harava");
             //AudioManager.instance.Play(collectAudio);
             this.transform.SetParent(point.gameObject.transform);
             this.GetComponent<BallScript>().enabled = false;
