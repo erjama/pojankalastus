@@ -19,12 +19,14 @@ public class PartCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
 
-        if (other.gameObject.tag == "bodyPart") {
+        if (other.gameObject.tag == "bodyPart")
+        {
 
             pickUp.removeItem();
             var name = other.gameObject.GetComponentInChildren<MeshRenderer>().gameObject.name;
@@ -35,10 +37,13 @@ public class PartCollector : MonoBehaviour
         }
     }
 
-    public void buildBody(string part) {
+    public void buildBody(string part)
+    {
 
-        foreach (Renderer renderer in childRenderers) {
-            if (renderer.gameObject.name == part) {
+        foreach (Renderer renderer in childRenderers)
+        {
+            if (renderer.gameObject.name == part)
+            {
 
                 renderer.enabled = true;
             }
