@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7, y: -33.588}
+  m_AnchoredPosition: {x: 2.7, y: -19.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174379029
@@ -550,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &572794629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1369,108 +1369,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pojan kalastus
+  m_text: 'Programming:
 
 
-    CREDITS
+    Erja Manninen
+
+    Miika Kontio
 
 
-    Produced by
+    Art:
 
-    mikeliz89 ... producer
+    Sepi
+    Toivonen
 
-    Adara
-    ... producer
-
-
-
-    Game design by
-
-    Adara ... game designer
-
-    mikeliz89
-    ... game designer
-
-
-
-    Lead programmer
-
-    mikeliz89
-
-
-
-    Assistant programmers
-
-    Adara
-
-
-
-    Graphics
-    by
-
-    Adara ... graphics designer and creator
-
-    mikeliz89 ... assistant
-    graphics designer and creator
-
-    A.I
-
-
-
-    Project Management
-
-    mikeliz89
-    ... Trello agent
-
-    Adara ... assistant Trello agent, additional crew
-
-
-
-    Art
-    Department
-
-    Adara ... art creator
-
-    mikeliz89 ... assistant art creator
-
-
-
-    Sound
-    Department
-
-    mikeliz89 ... sound
-
-    Adara ... re-recording mixer / supervising
-    sound editor
-
-
-
-    Music Department
-
-    mikeliz89 ... composer: additional
-    music
-
-    Adara ... composer: additional music
-
-
-
-    Game testing by
-
-    mikeliz89
-
-
-    ...
-
-    Special
-    thanks to
-
-    Adara ... for your support in every
-
-
-    All the youtubers out
-    there to put their tutorial videos online
-
-'
+    Tanja Kakko'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1604,7 +1516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit Game
+  m_text: Lopeta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1718,7 +1630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7, y: -26.13}
+  m_AnchoredPosition: {x: 2.7, y: -11.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959560234
@@ -1844,7 +1756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &966506187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2058,7 +1970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: "Tekij\xE4t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2656,7 +2568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Game
+  m_text: Aloita
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
