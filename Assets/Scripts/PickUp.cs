@@ -16,6 +16,8 @@ public class PickUp : MonoBehaviour
             other.gameObject.transform.SetParent(point.gameObject.transform);
             other.gameObject.transform.localPosition = Vector3.zero;
             other.gameObject.GetComponent<BallScript>().enabled = false;
+            var rb= other.gameObject.GetComponent<Rigidbody>();
+            Destroy(rb);
             AudioManager.instance.Play(audioClipCollectItem);
         }
     }

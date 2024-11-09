@@ -23,17 +23,29 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Check if the spacebar was pressed in this frame
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SetNextDialogue();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
+            SetNextDialogue();
+        }
+    }
+
+    private void SetNextDialogue()
+    {
+        if (textComponent.text == lines[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = lines[index];
         }
     }
 
