@@ -7,10 +7,13 @@ public class PartCollector : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] GameObject rake;
+    [SerializeField] GameObject lemminkainen;
     private PickUp pickUp;
+    Renderer[] childRenderers;
     void Start()
     {
         pickUp = rake.GetComponent<PickUp>();
+        childRenderers = lemminkainen.GetComponentsInChildren<Renderer>();
     }
 
     // Update is called once per frame
@@ -24,7 +27,8 @@ public class PartCollector : MonoBehaviour
         if (other.gameObject.tag == "bodyPart") {
 
             pickUp.removeItem();
-            buildBody(other.gameObject.name);
+            var name = other.gameObject.GetComponentInChildren<MeshRenderer>().gameObject.name;
+            buildBody(name);
             Destroy(other.gameObject);
             //other.gameObject.SetActive(false);
             //other.gameObject.GetComponentInChildren<MeshRenderer>().enabled= false;
@@ -33,7 +37,11 @@ public class PartCollector : MonoBehaviour
 
     public void buildBody(string part) {
 
-        Debug.Log(part);
-    
+        foreach (Renderer renderer in childRenderers) {
+            if (renderer.gameObject.name == part) {
+
+                renderer.enabled = true;
+            }
+        }
     }
 }
