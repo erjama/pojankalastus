@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1861631246906171484}
   - component: {fileID: 7731029276477919950}
   - component: {fileID: 4269473210540060343}
-  - component: {fileID: 1632645465089161375}
   m_Layer: 0
   m_Name: VasenKasi
   m_TagString: Untagged
@@ -77,20 +76,6 @@ MonoBehaviour:
   height: 1.7
   waveHeight: 0.1
   waveSpeed: 1
---- !u!114 &1632645465089161375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4608404950288274577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580d8b7f4c7fa894e94f50a607d5238b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point: {fileID: 0}
-  collectAudio: {fileID: 8300000, guid: 1e0c966b0ebf5a54c87bb0e2e6d6fcc3, type: 3}
 --- !u!1001 &506427074401221837
 PrefabInstance:
   m_ObjectHideFlags: 0
