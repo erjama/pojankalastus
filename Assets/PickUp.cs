@@ -20,4 +20,10 @@ public class PickUp : MonoBehaviour
 
         }
     }
+
+
+    public void removeItem() {
+        hasItem = false;
+        
+    }
 }
