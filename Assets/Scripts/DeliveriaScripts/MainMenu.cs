@@ -10,7 +10,8 @@ public class MainMenu : MonoBehaviour
     public GameObject CreditsTextControllerContainer;
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("River");
+        SceneManager.LoadSceneAsync("StoryScene");
+        //SceneManager.LoadSceneAsync("River");
     }
 
     private void Update()
