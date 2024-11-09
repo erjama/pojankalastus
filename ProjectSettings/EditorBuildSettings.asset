@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/River.unity
     guid: 0ff8baf06042a9b4e8669cba85db4e9a
+  - enabled: 1
+    path: Assets/Scenes/StoryScene.unity
+    guid: d6838689d3612864889f2f87e1b80e46
   m_configObjects: {}
