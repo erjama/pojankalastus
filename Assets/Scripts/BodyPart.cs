@@ -4,18 +4,20 @@ using UnityEngine.EventSystems;
 public class BodyPart : MonoBehaviour
 {
 
-    [SerializeField] private GameObject point;
-    [SerializeField] AudioClip collectAudio;
-    private void OnTriggerEnter(Collider other) {
+    //[SerializeField] private GameObject point;
+    //[SerializeField] AudioClip collectAudio;
+    //private bool hasItem = false;
+    //private void OnTriggerEnter(Collider other) {
 
-        if (other.gameObject.name == "harava") {
+    //    if (other.gameObject.name == "harava" && hasItem == false) {
 
-            Debug.Log("harava");
-            //AudioManager.instance.Play(collectAudio);
-            this.transform.SetParent(point.gameObject.transform);
-            this.GetComponent<BallScript>().enabled = false;
+    //        //AudioManager.instance.Play(collectAudio);
+    //        hasItem = true;
+    //        this.transform.SetParent(point.gameObject.transform);
+    //        this.transform.localPosition = Vector3.zero;
+    //        this.GetComponent<BallScript>().enabled = false;
             
-        }
-    }
+    //    }
+    //}
 
 }
