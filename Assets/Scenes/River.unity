@@ -3421,6 +3421,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 94316416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &933079533 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7632225680476989461, guid: e2b71616f431ab3408b61476cee604e5, type: 3}
+  m_PrefabInstance: {fileID: 68942036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &984361140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12081,6 +12086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 1245399811}
   audioClipCollectItem: {fileID: 8300000, guid: 39f7069c9d860594eb9b58630f9974fa, type: 3}
+  animator: {fileID: 933079533}
 --- !u!1 &2045335638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3698647531824908033, guid: b6a8ebee0c927e349bc79478b424d2e3, type: 3}
