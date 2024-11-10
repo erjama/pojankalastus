@@ -3,11 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class PartCollector : MonoBehaviour
 {
+    private const int ALL_PIECES_COLLECTED_COUNT = 7;
+    private const string END_SCENE_NAME = "sepinscene";
     [SerializeField] GameObject rake;
     [SerializeField] GameObject lemminkainen;
     private PickUp pickUp;
     Renderer[] childRenderers;
     private int collectedPieces = 0;
+
+    [SerializeField] AudioClip setPartAudio;
 
     void Start()
     {
@@ -18,9 +22,9 @@ public class PartCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (collectedPieces == 7) {
-
-            SceneManager.LoadScene("sepinscene");
+        if (collectedPieces == ALL_PIECES_COLLECTED_COUNT)
+        {
+            SceneManager.LoadScene(END_SCENE_NAME);
         }
     }
 
@@ -29,10 +33,10 @@ public class PartCollector : MonoBehaviour
 
         if (other.gameObject.tag == "bodyPart")
         {
-
             pickUp.removeItem();
             var name = other.gameObject.GetComponentInChildren<MeshRenderer>().gameObject.name;
             buildBody(name);
+            AudioManager.instance.Play(setPartAudio);
             Destroy(other.gameObject);
         }
     }
@@ -43,7 +47,7 @@ public class PartCollector : MonoBehaviour
         {
             if (renderer.gameObject.name == part)
             {
-                collectedPieces++; 
+                collectedPieces++;
                 renderer.enabled = true;
             }
         }
