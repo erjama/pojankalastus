@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,8 +29,14 @@ public class PartCollector : MonoBehaviour
     {
         if (collectedPieces == ALL_PIECES_COLLECTED_COUNT)
         {
-            SceneManager.LoadScene(END_SCENE_NAME);
+            StartCoroutine(GoToGameEnd());
         }
+    }
+
+    private IEnumerator GoToGameEnd()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(END_SCENE_NAME);
     }
 
     private void OnTriggerEnter(Collider other)
