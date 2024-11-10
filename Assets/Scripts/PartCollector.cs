@@ -7,15 +7,19 @@ public class PartCollector : MonoBehaviour
     private const string END_SCENE_NAME = "sepinscene";
     [SerializeField] GameObject rake;
     [SerializeField] GameObject lemminkainen;
+    [SerializeField] GameObject blood;
     private PickUp pickUp;
     Renderer[] childRenderers;
     private int collectedPieces = 0;
 
     [SerializeField] AudioClip setPartAudio;
 
+    private StartBlood startBlood;
+
     void Start()
     {
         pickUp = rake.GetComponent<PickUp>();
+        startBlood = blood.GetComponent<StartBlood>();
         childRenderers = lemminkainen.GetComponentsInChildren<Renderer>();
     }
 
@@ -36,7 +40,13 @@ public class PartCollector : MonoBehaviour
             pickUp.removeItem();
             var name = other.gameObject.GetComponentInChildren<MeshRenderer>().gameObject.name;
             buildBody(name);
+
+            //play sound
             AudioManager.instance.Play(setPartAudio);
+
+            //show blood
+            startBlood.TriggerParticleEffect();
+
             Destroy(other.gameObject);
         }
     }
