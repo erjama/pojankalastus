@@ -8,6 +8,8 @@ public class Swan : MonoBehaviour
     public float patrolSpeed = 2f;    // Speed of enemy when patrolling
     public float attackSpeed = 4;
     public float attackRange = 10f;    // Distance at which enemy starts attacking
+    [SerializeField] AudioClip angrySound;
+    private bool isAttacking = false;
 
     private int currentWaypointIndex = 0;
     private NavMeshAgent navAgent;    // NavMeshAgent for movement
@@ -48,7 +50,11 @@ public class Swan : MonoBehaviour
         if (Time.time >= nextAttackTime) {
             navAgent.speed = attackSpeed;
             navAgent.SetDestination(mummo.position);
-            animator.SetBool("playerIsOnRange", true);
+            if (isAttacking == false) {
+                animator.SetBool("playerIsOnRange", true);
+                AudioManager.instance.Play(angrySound);
+                isAttacking = true;
+            }
 
             // Check if close enough to "attack"
             if (navAgent.remainingDistance <= navAgent.stoppingDistance) {
@@ -56,6 +62,7 @@ public class Swan : MonoBehaviour
                 animator.SetBool("playerIsOnRange", false);
                 navAgent.speed = patrolSpeed;
                 navAgent.SetDestination(waypoints[currentWaypointIndex].position);
+                isAttacking = false;
             }
         }
     }
