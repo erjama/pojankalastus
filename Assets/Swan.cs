@@ -26,7 +26,6 @@ public class Swan : MonoBehaviour
 
     void Update() {
 
-
         float distanceToPlayer = Vector3.Distance(transform.position, mummo.position);
   
         if (distanceToPlayer <= attackRange) {

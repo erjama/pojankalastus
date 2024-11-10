@@ -16,19 +16,14 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        if (Input.GetMouseButtonDown(0)) {
             CreditsPanel.SetActive(false);
-            CreditsTextControllerContainer.SetActive(false);
-            CreditTextsController.ResetCredits();
         }
     }
 
     public void ShowCredits()
     {
         CreditsPanel.SetActive(true);
-        CreditsTextControllerContainer.SetActive(true);
-        CreditTextsController.StartCreditTexts();
     }
 
     public void ExitGame()

@@ -436,8 +436,7 @@ MonoBehaviour:
   textComponent: {fileID: 1545029457}
   lines:
   - "Lemmink\xE4inen on tapettu ja silvottu,"
-  - ' ruumiin palat heitetty tummaan jokeen,'
-  - Tuonelan virtaan.
+  - ' ruumiin palat heitetty tummaan jokeen, Tuonelan virtaan'
   - "Lemmink\xE4isen \xE4iti haravoi poikansa ruumiinosat,"
   - "ommellakseen h\xE4net taas kokonaiseksi"
   textSpeed: 0.1
