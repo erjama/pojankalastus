@@ -62,7 +62,8 @@ public class FirstPersonController : MonoBehaviour
         rb.MovePosition(rb.position + move * speed * Time.deltaTime);
     }
 
-    public void transformPlayerToStart() {
+    public void transformPlayerToStart()
+    {
 
         transform.position = startpoint.position;
         scare.HideMonster();

@@ -12,28 +12,26 @@ public class Nakki : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
 
-        if (other.gameObject.name == "PlayerMummo") {
-
+        if (other.gameObject.name == "PlayerMummo")
+        {
             AudioManager.instance.Play(laughter);
             scare.ShowMonster();
             StartCoroutine(transformPlayer());
-           
         }
     }
 
-    IEnumerator transformPlayer() {
-
+    IEnumerator transformPlayer()
+    {
         yield return new WaitForSeconds(0.5f);
         firstPersonController.transformPlayerToStart();
     }

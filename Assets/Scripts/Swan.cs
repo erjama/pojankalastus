@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,51 +18,77 @@ public class Swan : MonoBehaviour
     [SerializeField] private Transform startpoint;
     [SerializeField] FirstPersonController firstPersonController;
 
-    void Start() {
+    void Start()
+    {
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.speed = patrolSpeed;
     }
 
-    void Update() {
-
+    void Update()
+    {
         float distanceToPlayer = Vector3.Distance(transform.position, mummo.position);
-  
-        if (distanceToPlayer <= attackRange) {
+
+        if (distanceToPlayer <= attackRange)
+        {
             // If player is close, attack
             AttackPlayer();
-        } else {
+        }
+        else
+        {
             // Otherwise, keep patrolling
             Patrol();
         }
     }
 
-    void Patrol() {
-        if (navAgent.remainingDistance < 0.5f && !navAgent.pathPending) {
+    void Patrol()
+    {
+        if (navAgent.remainingDistance < 0.5f && !navAgent.pathPending)
+        {
             // Move to the next waypoint
-            isAttacking = false;
+            StopAttacking();
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
             navAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
 
-    void AttackPlayer() {
-        if (Time.time >= nextAttackTime) {
+    void AttackPlayer()
+    {
+        if (Time.time >= nextAttackTime)
+        {
             navAgent.speed = attackSpeed;
             navAgent.SetDestination(mummo.position);
-            if (isAttacking == false) {
-                animator.SetBool("playerIsOnRange", true);
-                AudioManager.instance.Play(angrySound);
-                isAttacking = true;
+            if (isAttacking == false)
+            {
+                StartAttacking();
             }
 
             // Check if close enough to "attack"
-            if (navAgent.remainingDistance <= navAgent.stoppingDistance) {
+            if (IsCloseEnoughToHitting())
+            {
+                Debug.Log("Hitting player");
+                StopAttacking();
                 firstPersonController.transformPlayerToStart();
-                animator.SetBool("playerIsOnRange", false);
                 navAgent.speed = patrolSpeed;
                 navAgent.SetDestination(waypoints[currentWaypointIndex].position);
-                isAttacking = false;
             }
         }
+    }
+
+    private bool IsCloseEnoughToHitting()
+    {
+        return navAgent.remainingDistance <= navAgent.stoppingDistance;
+    }
+
+    private void StartAttacking()
+    {
+        animator.SetBool("playerIsOnRange", true);
+        AudioManager.instance.Play(angrySound);
+        isAttacking = true;
+    }
+
+    private void StopAttacking()
+    {
+        isAttacking = false;
+        animator.SetBool("playerIsOnRange", false);
     }
 }
