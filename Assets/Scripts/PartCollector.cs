@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PartCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [SerializeField] GameObject rake;
     [SerializeField] GameObject lemminkainen;
     private PickUp pickUp;
     Renderer[] childRenderers;
+    private int collectedPieces = 0;
+
     void Start()
     {
         pickUp = rake.GetComponent<PickUp>();
@@ -19,7 +18,10 @@ public class PartCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (collectedPieces == 7) {
 
+            SceneManager.LoadScene("sepinscene");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,19 +34,16 @@ public class PartCollector : MonoBehaviour
             var name = other.gameObject.GetComponentInChildren<MeshRenderer>().gameObject.name;
             buildBody(name);
             Destroy(other.gameObject);
-            //other.gameObject.SetActive(false);
-            //other.gameObject.GetComponentInChildren<MeshRenderer>().enabled= false;
         }
     }
 
     public void buildBody(string part)
     {
-
         foreach (Renderer renderer in childRenderers)
         {
             if (renderer.gameObject.name == part)
             {
-
+                collectedPieces++; 
                 renderer.enabled = true;
             }
         }
