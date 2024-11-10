@@ -7,6 +7,9 @@ public class Nakki : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] AudioClip laughter;
+    [SerializeField] Scare scare;
+    [SerializeField] FirstPersonController firstPersonController;
+
     void Start()
     {
         
@@ -23,8 +26,15 @@ public class Nakki : MonoBehaviour
         if (other.gameObject.name == "PlayerMummo") {
 
             AudioManager.instance.Play(laughter);
-            Debug.Log("Activate nakki");
-        
+            scare.ShowMonster();
+            StartCoroutine(transformPlayer());
+           
         }
+    }
+
+    IEnumerator transformPlayer() {
+
+        yield return new WaitForSeconds(0.5f);
+        firstPersonController.transformPlayerToStart();
     }
 }

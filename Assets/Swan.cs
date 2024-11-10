@@ -15,6 +15,7 @@ public class Swan : MonoBehaviour
     [SerializeField] private Transform mummo;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform startpoint;
+    [SerializeField] FirstPersonController firstPersonController;
 
     void Start() {
         navAgent = GetComponent<NavMeshAgent>();
@@ -50,8 +51,8 @@ public class Swan : MonoBehaviour
             animator.SetBool("playerIsOnRange", true);
 
             // Check if close enough to "attack"
-            if (navAgent.remainingDistance <= navAgent.stoppingDistance) {      
-                mummo.position = startpoint.position;
+            if (navAgent.remainingDistance <= navAgent.stoppingDistance) {
+                firstPersonController.transformPlayerToStart();
                 animator.SetBool("playerIsOnRange", false);
                 navAgent.speed = patrolSpeed;
                 navAgent.SetDestination(waypoints[currentWaypointIndex].position);

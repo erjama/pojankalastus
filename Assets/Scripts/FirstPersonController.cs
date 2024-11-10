@@ -9,6 +9,9 @@ public class FirstPersonController : MonoBehaviour
     private Transform cameraTransform;
     private float xRotation = 0.0f;
 
+    [SerializeField] private Transform startpoint;
+    [SerializeField] Scare scare;
+
     [Header("Player Step Climb:")]
     [SerializeField] GameObject stepRayUpper;
     [SerializeField] GameObject stepRayLower;
@@ -57,6 +60,12 @@ public class FirstPersonController : MonoBehaviour
         Vector3 move = transform.right * moveHorizontal + transform.forward * moveVertical;
 
         rb.MovePosition(rb.position + move * speed * Time.deltaTime);
+    }
+
+    public void transformPlayerToStart() {
+
+        transform.position = startpoint.position;
+        scare.HideMonster();
     }
 
     void StepClimb()
