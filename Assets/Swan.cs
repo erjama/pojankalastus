@@ -40,7 +40,7 @@ public class Swan : MonoBehaviour
     void Patrol() {
         if (navAgent.remainingDistance < 0.5f && !navAgent.pathPending) {
             // Move to the next waypoint
-            isAttacking = true;
+            isAttacking = false;
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
             navAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
